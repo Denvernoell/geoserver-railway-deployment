@@ -2,7 +2,7 @@
 FROM tomcat:9-jdk11
 
 # Set the GeoServer version
-ENV GEOSERVER_VERSION=2.21.0
+ENV GEOSERVER_VERSION=2.22.0
 
 # Download GeoServer
 RUN curl -o geoserver.zip \
