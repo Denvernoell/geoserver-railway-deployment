@@ -1,1 +1,1 @@
-web: catalina.sh run
+web: /opt/geoserver/bin/startup.sh

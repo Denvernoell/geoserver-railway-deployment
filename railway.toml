@@ -1,0 +1,11 @@
+[build]
+# Use the official OSGeo GeoServer Docker image
+dockerImage = "docker.osgeo.org/geoserver:2.26.1"
+
+[deploy]
+# GeoServer runs on port 8080
+startCommand = ""
+healthcheckPath = "/geoserver/web"
+healthcheckTimeout = 300
+# restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
