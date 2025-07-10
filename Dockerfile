@@ -1,20 +1,5 @@
-# Use a base Tomcat image with Java
-FROM tomcat:9-jdk11
-
-# Set the GeoServer version
-ENV GEOSERVER_VERSION=2.20.0
-
-# Install curl and unzip
-RUN apt-get update && apt-get install -y curl unzip && rm -rf /var/lib/apt/lists/*
-
-# Download GeoServer
-RUN curl -L -o geoserver.zip \
-    https://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-bin.zip/download \
-    && unzip geoserver.zip -d /usr/local/tomcat/webapps/ \
-    && rm geoserver.zip
+# Use the official OSGeo GeoServer Docker image
+FROM docker.osgeo.org/geoserver:2.26.1
 
 # Expose port 8080 for access
 EXPOSE 8080
-
-# Start Tomcat
-CMD ["catalina.sh", "run"]
