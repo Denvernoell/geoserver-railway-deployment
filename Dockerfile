@@ -8,8 +8,8 @@ ENV GEOSERVER_VERSION=2.20.0
 RUN apt-get update && apt-get install -y curl unzip && rm -rf /var/lib/apt/lists/*
 
 # Download GeoServer
-RUN curl -o geoserver.zip \
-    https://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-bin.zip \
+RUN curl -L -o geoserver.zip \
+    https://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-bin.zip/download \
     && unzip geoserver.zip -d /usr/local/tomcat/webapps/ \
     && rm geoserver.zip
 
